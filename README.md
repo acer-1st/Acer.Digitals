@@ -1,1 +1,982 @@
-# Acer.Digitals
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ACER DIGITALS | Creative Digital Agency</title>
+
+    <meta name="description"
+          content="ACER DIGITALS — Creative digital agency specializing in web design, graphic design, branding and digital experiences.">
+
+    <style>
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           VARIABLES
+        ========================== */
+
+        :root {
+            --bg: #080808;
+            --card: #111111;
+            --card-light: #171717;
+            --text: #ffffff;
+            --muted: #999999;
+            --accent: #d9ff3f;
+            --border: #252525;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nav {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: #cccccc;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        section {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1;
+            margin-top: 10px;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        #home {
+            min-height: 100vh;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding-top: 150px;
+            padding-bottom: 80px;
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-small {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            line-height: 0.9;
+            letter-spacing: -5px;
+            max-width: 800px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-text {
+            max-width: 600px;
+            color: var(--muted);
+            margin-top: 30px;
+            font-size: 1.05rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border: 1px solid var(--accent);
+            color: #000;
+            background: var(--accent);
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(217,255,63,0.15);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border-color: #333;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* =========================
+           HERO IMAGE
+        ========================== */
+
+        .hero-card {
+            position: relative;
+            background: var(--card);
+            padding: 10px;
+            border: 1px solid var(--border);
+            transform: rotate(2deg);
+            transition: 0.4s ease;
+        }
+
+        .hero-card:hover {
+            transform: rotate(0deg) translateY(-5px);
+        }
+
+        .hero-card img {
+            height: 550px;
+            object-fit: cover;
+        }
+
+        .hero-card-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: var(--accent);
+            color: #000;
+            padding: 8px 14px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat {
+            padding: 30px;
+            background: var(--card);
+            border: 1px solid var(--border);
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+
+        .stat p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           SERVICES
+        ========================== */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--card);
+            padding: 35px;
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .service-number {
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 35px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .project-image {
+            height: 360px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info span {
+            color: var(--accent);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-info h3 {
+            margin-top: 8px;
+            font-size: 1.3rem;
+        }
+
+        .project-info p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-box {
+            background: var(--accent);
+            color: #000;
+            padding: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 0.95;
+            max-width: 700px;
+        }
+
+        .contact-box p {
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 200px;
+        }
+
+        .contact-btn {
+            display: block;
+            text-align: center;
+            padding: 14px 20px;
+            background: #000;
+            color: #fff;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 0;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #0b0b0b;
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                border-top: 1px solid var(--border);
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 18px 5%;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            #home {
+                grid-template-columns: 1fr;
+                padding-top: 130px;
+            }
+
+            .hero-card {
+                max-width: 500px;
+                margin: auto;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 45px 30px;
+            }
+
+            .contact-buttons {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .hero h1 {
+                font-size: 3.4rem;
+                letter-spacing: -3px;
+            }
+
+            .hero-card img {
+                height: 450px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                height: 400px;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+        <nav class="nav">
+
+            <a href="#home" class="logo">
+                ACER<span>.</span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-small">
+                    ACER DIGITALS
+                </div>
+
+                <h1>
+                    WE DESIGN.<br>
+                    WE BUILD.<br>
+                    <span>WE CREATE.</span>
+                </h1>
+
+                <p class="hero-text">
+                    ACER DIGITALS is a creative digital brand focused on
+                    modern websites, graphic design, branding and digital
+                    experiences that help brands stand out.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">
+                        View My Work
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Contact Me
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <img
+                    src="2409FEEB-AC3A-4506-BA5D-B25693114AB3.png"
+                    alt="ACER DIGITALS"
+                >
+
+                <div class="hero-card-label">
+                    CREATIVE DIGITAL BRAND
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section id="about">
+
+            <div class="section-title">
+                <span>01 — About</span>
+                <h2>Built to create.</h2>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <p>
+                        ACER DIGITALS is a growing creative digital brand
+                        focused on turning ideas into clean, modern and
+                        useful digital experiences.
+                    </p>
+
+                    <p>
+                        From websites and graphics to branding and digital
+                        content, the goal is simple — create work that looks
+                        good, communicates clearly and helps businesses
+                        stand out.
+                    </p>
+
+                    <p>
+                        Every project is approached with creativity,
+                        attention to detail and a focus on delivering
+                        something that actually works.
+                    </p>
+
+                </div>
+
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <h3>03+</h3>
+                        <p>Creative Services</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>100%</h3>
+                        <p>Creative Focus</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>01</h3>
+                        <p>Growing Brand</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>∞</h3>
+                        <p>Ideas to Create</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVICES
+        ========================== -->
+
+        <section id="services">
+
+            <div class="section-title">
+                <span>02 — Services</span>
+                <h2>What I do.</h2>
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        01
+                    </div>
+
+                    <h3>Web Design</h3>
+
+                    <p>
+                        Modern, responsive websites designed to give
+                        businesses and personal brands a strong online
+                        presence.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        02
+                    </div>
+
+                    <h3>Graphic Design</h3>
+
+                    <p>
+                        Clean and creative graphics for social media,
+                        promotions, personal brands and businesses.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        03
+                    </div>
+
+                    <h3>Branding</h3>
+
+                    <p>
+                        Visual identity concepts that help brands develop
+                        a recognizable and professional appearance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section id="projects">
+
+            <div class="section-title">
+                <span>03 — Projects</span>
+                <h2>Selected work.</h2>
+            </div>
+
+            <div class="projects-grid">
+
+
+                <!-- PROJECT 1 -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+
+                        <img
+                            src="2409FEEB-AC3A-4506-BA5D-B25693114AB3.png"
+                            alt="ACER DIGITALS Project"
+                        >
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <span>Creative</span>
+
+                        <h3>Personal Brand</h3>
+
+                        <p>
+                            A modern visual concept created for a personal
+                            digital brand.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 2 -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+
+                        <img
+                            src="482AEAED-116E-4771-ABD8-AB4D07FA7B71.png"
+                            alt="ACER DIGITALS Project"
+                        >
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <span>Photography</span>
+
+                        <h3>Creative Portrait</h3>
+
+                        <p>
+                            A creative visual direction combining
+                            photography, lighting and presentation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 3 -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+
+                        <img
+                            src="07EDA24A-F747-4AD6-B142-0682A289C2FA.png"
+                            alt="ACER DIGITALS Project"
+                        >
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <span>Digital Art</span>
+
+                        <h3>Digital Visual</h3>
+
+                        <p>
+                            A stylized digital artwork created to explore
+                            a different creative direction.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section id="contact">
+
+            <div class="contact-box">
+
+                <div>
+
+                    <h2>
+                        LET'S BUILD
+                        SOMETHING.
+                    </h2>
+
+                    <p>
+                        Have an idea or project? Let's talk.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-buttons">
+
+                    <a
+                        href="mailto:mosesdolapo048@gmail.com"
+                        class="contact-btn"
+                    >
+                        Email Me
+                    </a>
+
+                    <a
+                        href="https://wa.me/2348126424446"
+                        target="_blank"
+                        class="contact-btn"
+                    >
+                        WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div>
+            © <span id="year"></span>
+            <strong>ACER DIGITALS</strong>
+        </div>
+
+        <div>
+            Designed & Built with creativity.
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        // Mobile menu
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", function () {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+
+        // Close mobile menu after clicking a link
+
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("active");
+
+            });
+
+        });
+
+
+        // Current year
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+</html>
